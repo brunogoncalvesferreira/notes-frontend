@@ -1,9 +1,9 @@
 import { Button } from '../../components/Button'
-import { Header } from '../../components/Header/Index'
+import { Header } from '../../components/Header'
 import { Container, Links, Content } from './styles'
-import { Section } from '../../components/Section/Index'
-import { Tag } from '../../components/Tag/Index'
-import { ButtonText } from '../../components/ButtonText/Index'
+import { Section } from '../../components/Section'
+import { Tag } from '../../components/Tag'
+import { ButtonText } from '../../components/ButtonText'
 
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
