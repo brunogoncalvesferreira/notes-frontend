@@ -5,7 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from './styles/theme.js'
 import GlobalStyles from './styles/global.js'
 
-import { Routes } from './routes'
+import { Routes } from './routes/Router.jsx'
 import { AuthContextProvider } from './hooks/auth'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
