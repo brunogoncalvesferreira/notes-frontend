@@ -1,8 +1,8 @@
-import { Button } from '../../components/Button'
-import { Header } from '../../components/Header'
+import { Button } from '../../components/Button/button'
+import { Header } from '../../components/Header/header'
 import { Container, Links, Content } from './styles'
-import { Section } from '../../components/Section'
-import { Tag } from '../../components/Tag'
+import { Section } from '../../components/Section/section'
+import { Tag } from '../../components/Tag/tag'
 import { ButtonText } from '../../components/ButtonText'
 
 import { useParams, useNavigate } from 'react-router-dom'

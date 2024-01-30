@@ -1,11 +1,11 @@
-import { Header } from '../../components/Header'
-import { Input } from '../../components/Input'
-import { TextArea } from '../../components/TextArea'
-import { Section } from '../../components/Section'
+import { Header } from '../../components/Header/header'
+import { Input } from '../../components/Input/input'
+import { TextArea } from '../../components/TextArea/text-area'
+import { Section } from '../../components/Section/section'
 
 import { Container, Form } from './styles'
-import { NoteItem } from '../../components/NoteItem'
-import { Button } from '../../components/Button'
+import { NoteItem } from '../../components/NoteItem/note-item'
+import { Button } from '../../components/Button/button'
 
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
