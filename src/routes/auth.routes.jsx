@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { SignIn } from '../pages/SignIn'
-import { SignUp } from '../pages/SignUp'
+import { SignIn } from '../pages/SignIn/sign-in'
+import { SignUp } from '../pages/SignUp/sign-up'
 
 export function AuthRoutes() {
   const user = localStorage.getItem('@rocketnotes:user')
