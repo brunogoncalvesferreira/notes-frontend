@@ -7,15 +7,18 @@ import { Link } from 'react-router-dom'
 
 import { useAuth } from '../../hooks/auth'
 import { useState } from 'react'
+import { Loading } from '../../components/Loading/loading'
 
 export function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const { signIn } = useAuth()
 
-  function handleSignIn() {
-    signIn({ email, password })
+  async function handleSignIn() {
+    setLoading(true)
+    await signIn({ email, password }).then(() => setLoading(false))
   }
 
   return (
@@ -39,7 +42,10 @@ export function SignIn() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button onClick={handleSignIn} title="Entrar" />
+        <Button
+          onClick={handleSignIn}
+          title={loading ? <Loading /> : 'Entrar'}
+        />
 
         <Link to="/register">Criar conta</Link>
       </Form>

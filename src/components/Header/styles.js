@@ -17,6 +17,10 @@ export const HeaderContainer = styled.header`
   align-items: center;
 
   padding: 0 5rem;
+
+  @media (max-width: 600px) {
+    padding: 0 1.5rem;
+  }
 `
 
 export const Profile = styled(Link)`

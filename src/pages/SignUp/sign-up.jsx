@@ -8,10 +8,13 @@ import { useState } from 'react'
 
 import { api } from '../../services/api'
 
+import { Loading } from '../../components/Loading/loading'
+
 export function SignUp() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
   const navigate = useNavigate()
 
@@ -20,9 +23,12 @@ export function SignUp() {
       return alert('Preencha todos os dados')
     }
 
+    setIsLoading(true)
+
     api
       .post('/users', { name, email, password })
       .then(() => {
+        setIsLoading(false)
         alert('Usuário cadastrado com sucesso')
         navigate(-1)
       })
@@ -67,7 +73,10 @@ export function SignUp() {
           value={password}
         />
 
-        <Button onClick={handleSignUp} title="Cadastrar" />
+        <Button
+          onClick={handleSignUp}
+          title={isLoading ? <Loading /> : 'Cadastrar'}
+        />
 
         <Link to="/">Voltar para login</Link>
       </Form>

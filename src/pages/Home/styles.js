@@ -16,6 +16,20 @@ export const Container = styled.div`
     'newnote content';
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+  @media (max-width: 768px) {
+    height: auto;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 6.5625rem 8rem auto;
+    grid-template-areas:
+      'header'
+      'brand'
+      'menu'
+      'search'
+      'content'
+      'newnote';
+  }
 `
 
 export const Brand = styled.div`
@@ -35,6 +49,16 @@ export const Brand = styled.div`
     font-size: 1.5rem;
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    > h1 {
+      width: 100%;
+      text-align: left;
+      padding-left: 1.5rem;
+    }
+  }
 `
 
 export const Menu = styled.ul`
@@ -48,12 +72,28 @@ export const Menu = styled.ul`
   > li {
     margin-bottom: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: left;
+    padding-top: 1.5rem;
+    padding-inline: 1.5rem;
+    list-style: none;
+
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
 `
 
 export const Search = styled.div`
   grid-area: search;
 
   padding: 4rem 4rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1.5rem 1.5rem 0;
+  }
 `
 
 export const Content = styled.div`
@@ -62,6 +102,10 @@ export const Content = styled.div`
   padding: 0 4rem;
 
   overflow-y: auto;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
 `
 
 export const NewNote = styled(Link)`
@@ -81,4 +125,6 @@ export const NewNote = styled(Link)`
   > svg {
     font-size: 0.875rem;
   }
+
+  padding: 0.75rem 1.5rem;
 `

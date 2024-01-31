@@ -10,6 +10,7 @@ import { Button } from '../../components/Button/button'
 import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { api } from '../../services/api'
+import { Loading } from '../../components/Loading/loading'
 
 export function New() {
   const [title, setTitle] = useState('')
@@ -20,6 +21,8 @@ export function New() {
 
   const [tags, setTags] = useState([])
   const [newTag, setNewTag] = useState('')
+
+  const [isLoading, setIsLoading] = useState(false)
 
   const navigate = useNavigate()
 
@@ -58,12 +61,14 @@ export function New() {
       )
     }
 
-    await api.post('/notes', {
-      title,
-      description,
-      tags,
-      links,
-    })
+    await api
+      .post('/notes', {
+        title,
+        description,
+        tags,
+        links,
+      })
+      .then(() => setIsLoading(false))
 
     alert('Nota criada com sucesso')
     navigate(-1)
@@ -126,7 +131,10 @@ export function New() {
             </div>
           </Section>
 
-          <Button onClick={handleNewNote} title="Salvar" />
+          <Button
+            onClick={handleNewNote}
+            title={isLoading ? <Loading /> : 'Salvar'}
+          />
         </Form>
       </main>
     </Container>

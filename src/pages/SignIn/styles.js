@@ -38,6 +38,11 @@ export const Form = styled.form`
     margin-top: 7.25rem;
     color: ${({ theme }) => theme.COLORS.ORANGE};
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
 `
 
 export const Background = styled.div`
@@ -45,4 +50,8 @@ export const Background = styled.div`
   background: url(${backgroundImg}) no-repeat center;
   background-size: cover;
   opacity: 0.8;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
