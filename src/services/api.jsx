@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const api = axios.create({
-  baseURL: 'http://localhost:3333',
+  baseURL: 'https://notes-api-hvbp.onrender.com',
 })
 
 // https://notes-api-hvbp.onrender.com - em produção
