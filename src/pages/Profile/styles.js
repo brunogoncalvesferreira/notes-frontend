@@ -17,6 +17,13 @@ export const Container = styled.div`
     svg {
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       font-size: 1.5rem;
+      margin-left: 20rem;
+    }
+
+    @media (max-width: 768px) {
+      svg {
+        margin-left: -6.2rem;
+      }
     }
   }
 `
@@ -24,6 +31,7 @@ export const Container = styled.div`
 export const Form = styled.form`
   max-width: 21.25rem;
   margin: 1.875rem auto 0;
+  padding-inline: 1.5rem;
 
   > div:nth-child(4) {
     margin-top: 1.5rem;

@@ -32,6 +32,7 @@ export const Links = styled.ul`
 export const Content = styled.div`
   max-width: 550px;
   margin: 0 auto;
+  padding-inline: 1.5rem;
 
   display: flex;
   flex-direction: column;

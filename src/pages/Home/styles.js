@@ -127,4 +127,11 @@ export const NewNote = styled(Link)`
   }
 
   padding: 0.75rem 1.5rem;
+
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
 `
